@@ -1,9 +1,13 @@
-import os, sys
+from pathlib import Path
+import sys
 import pandas as pd
 
 def process_files(files, output_file):
     dfs = []
     skipped_files = []
+
+    # Convert output_file to Path to make sure windows paths don't break my stuff
+    output_file = Path(output_file)
 
     for f in files:
         f = Path(f)  # ensure Path object for each file, needed for absolute windows paths. in C: for example the : breaks path logic 

@@ -1,8 +1,11 @@
+from pathlib import Path
 from openpyxl import load_workbook
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
 def improve_excel(output_file):
-    wb = load_workbook(output_file)
+    output_file = Path(output_file)  # ensure Path object
+    
+    wb = load_workbook(str(output_file))
     ws = wb.active
 
     table = Table(displayName="LogTable", ref=ws.dimensions)
@@ -29,4 +32,4 @@ def improve_excel(output_file):
                 pass
         ws.column_dimensions[col_letter].width = min(max_length + 2, 50)
 
-    wb.save(output_file)
+    wb.save(str(output_file))

@@ -1,7 +1,11 @@
-import os, glob
+from pathlib import Path
+import sys
 
 def get_csv_files(input_path):
-    files = sorted(glob.glob(os.path.join(input_path, "*.csv")))
+    input_path = Path(input_path)  # ensure Path object
+    files = sorted(input_path.glob("*.csv"))  # Path.glob works cross-platform
+
     if not files:
-        sys.exit(1)
+        sys.exit("No CSV files found in the input folder.")
+
     return files
