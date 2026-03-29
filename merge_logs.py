@@ -12,7 +12,6 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 '''
 TODO: general cleanup, please...
 TODO: Add logger
-TODO: set output folder to same as input folder
 TODO: set output to be folder named timeline_<datetime> containing the timeline and script log
 TODO: split file into a main file, utils-file etc.
 TODO: add readme
@@ -24,7 +23,9 @@ def parse_args():
     return parser.parse_args()
 
 def build_output_file(input_path):
-    output_file = os.path.join(input_path, "timeline.xlsx")
+    output_folder = os.path.join(input_path, f"timeline_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S_%f")}")
+    os.makedirs(output_folder, exist_ok=True)
+    output_file = os.path.join(output_folder, "timeline.xlsx")
     return output_file
 
 def get_csv_files(input_path):
