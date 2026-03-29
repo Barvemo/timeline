@@ -7,6 +7,7 @@ from utils.build_output import build_output
 from utils.get_csv_files import get_csv_files
 from utils.process_files import process_files
 from utils.improve_excel import improve_excel
+from logger.logger_config import logger_config
 
 '''
 TODO: Add logger, log file should be located in output folder with the resulting timeline.xlxs
@@ -22,9 +23,11 @@ def parse_args():
 def main():
     args = parse_args()
     input_path = os.path.abspath(args.input)
+    output_file = build_output(input_path, args.output)
+    log_file = os.path.join(os.path.dirname(output_file), "timeline_script.log")
+    logger = logger_config(log_file)
 
     files = get_csv_files(input_path)
-    output_file = build_output(input_path, args.output)
 
     process_files(files, output_file)
     improve_excel(output_file)
