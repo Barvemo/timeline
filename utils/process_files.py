@@ -6,7 +6,9 @@ def process_files(files, output_file):
     skipped_files = []
 
     for f in files:
-        if os.path.getsize(f) == 0:
+        f = Path(f)  # ensure Path object for each file, needed for absolute windows paths. in C: for example the : breaks path logic 
+
+        if not f.is_file() or f.stat().st_size == 0:
             skipped_files.append(f)
             continue
 
