@@ -11,6 +11,7 @@ from logger.logger_config import logger_config
 
 '''
 TODO: Logger has been added, now add actual logging
+TODO: add test data; for both development and end users
 TODO: add readme
 '''
 
