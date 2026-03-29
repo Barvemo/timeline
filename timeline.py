@@ -9,12 +9,6 @@ from utils.process_files import process_files
 from utils.improve_excel import improve_excel
 from logger.logger_config import logger_config
 
-'''
-TODO: Logger has been added, now add actual logging
-TODO: add test data; for both development and end users
-TODO: add readme
-'''
-
 def parse_args():
     parser = argparse.ArgumentParser(description="Merge CSV logs into an Excel timeline")
     parser.add_argument("-i", "--input", required=True, help="Input folder with CSV files")

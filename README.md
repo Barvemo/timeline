@@ -56,3 +56,8 @@ pip install -r requirements.txt
 ```
 pyinstaller --onefile timeline.py
 ```
+
+## Improvements / TODO
+- Logger has been added, now add actual logging
+- add test data; for both development and end users
+- add GUI for even easier usability
