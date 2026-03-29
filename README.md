@@ -1,7 +1,6 @@
-# Timeline Script
+# Timeline
 
-A script that merges data from multiple CSV files into a single Excel file with formatting.
-Designed to run from a USB drive without requiring Python or internet access.
+Merges data from multiple CSV files into a single formatted Excel file. Designed to run without requiring Python or internet access (from a USB drive for example)
 
 ## Features
 
