@@ -26,13 +26,16 @@ Merges data from multiple CSV files into a single formatted Excel file. Designed
 timeline.exe --help
 
 # using path relative to script
-timeline.exe --input input_folder
+timeline.exe --input "input_folder"
+
 
 # using an absolute path
-timeline.exe --input E:\data\input_data
+# PS: if using absolute paths, make sure the path is within "" or it might break.
+# I lost the little remaining hair i have trying to make the code redundant, use "" or go bald like me.
+timeline.exe --input "E:\data\input_data"
 
 # using optional output folder argument
-timeline.exe --input F:\MYUSB\parsed_kape_data --output F:\MYUSB\folder_i_want_the_output_in_thank_you
+timeline.exe --input "F:\MYUSB\parsed_kape_data" --output "F:\MYUSB\folder_i_want_the_output_in_thank_you"
 ```
 
 ## Rebuilding / Development
@@ -58,6 +61,8 @@ pyinstaller --onefile timeline.py
 ```
 
 ## Improvements / TODO
-- Logger has been added, now add actual logging
+- Logger has been added, now add actual logging.
+- Logger seems to sometimes not create the logfile when GUI is used, not sure if this is only when the GUI is used. 
 - add test data; for both development and end users
-- add GUI for even easier usability
+- The added GUI stops answering when interacted with during processing of files. Fix that bug.
+- 
