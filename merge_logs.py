@@ -2,7 +2,6 @@
 
 import argparse, os, sys, glob
 from datetime import datetime
-import pandas as pd
 
 from utils.build_output import build_output
 from utils.get_csv_files import get_csv_files
