@@ -11,8 +11,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 '''
 TODO: general cleanup, please...
-TODO: Add logger
-TODO: set output to be folder named timeline_<datetime> containing the timeline and script log
+TODO: Add logger, log file should be located in output folder with the resulting timeline.xlxs
 TODO: split file into a main file, utils-file etc.
 TODO: add readme
 '''
