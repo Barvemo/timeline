@@ -19,11 +19,17 @@ TODO: add readme
 def parse_args():
     parser = argparse.ArgumentParser(description="Merge CSV logs into an Excel timeline")
     parser.add_argument("-i", "--input", required=True, help="Input folder with CSV files")
+    parser.add_argument("-o", "--output", required=False, help="Output folder for end product")
     return parser.parse_args()
 
-def build_output_file(input_path):
-    output_folder = os.path.join(input_path, f"timeline_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S_%f")}")
+def build_output_file(input_path, output_arg=None):
+    if output_arg:
+        output_folder = os.path.join(output_arg, f"timeline_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%f')}")
+    else:
+        output_folder = os.path.join(input_path, f"timeline_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%f')}")
+
     os.makedirs(output_folder, exist_ok=True)
+
     output_file = os.path.join(output_folder, "timeline.xlsx")
     return output_file
 
@@ -98,8 +104,9 @@ def enhance_excel(output_file):
 def main():
     args = parse_args()
     input_path = os.path.abspath(args.input)
+
     files = get_csv_files(input_path)
-    output_file = build_output_file(input_path)
+    output_file = build_output_file(input_path, args.output)
     process_files(files, output_file)
 
 if __name__ == "__main__":
