@@ -16,9 +16,8 @@ Designed to run from a USB drive without requiring Python or internet access.
 
 ## Installation / Setup
 
-1. Copy timeline.exe (windows only) or repository to USB/computer. R
-the contents of the USB drive to your computer (optional; can also run directly from USB)  
-2. Run script; input argument required, output argument optional. 
+1. Copy timeline.exe (windows only) or repository to USB/computer.
+2. Run script; input argument required, output argument optional.
 
 ## Usage
 ### Command-line example
@@ -38,15 +37,23 @@ timeline.exe --input F:\MYUSB\parsed_kape_data --output F:\MYUSB\folder_i_want_t
 ```
 
 ## Rebuilding / Development
-# Activate virtual environment
-# Windows
+### Activate virtual environment
+**Windows**
+```
 venv\Scripts\activate
+```
 
-# Linux/macOS
+**Linux/macOS**
+```
 source venv/bin/activate
+```
 
-# Install dependencies
+### Install dependencies
+```
 pip install -r requirements.txt
+```
 
-# Build standalone executable
+### Build standalone executable
+```
 pyinstaller --onefile timeline.py
+```
