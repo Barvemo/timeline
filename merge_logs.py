@@ -28,8 +28,7 @@ def main():
     files = get_csv_files(input_path)
     output_file = build_output(input_path, args.output)
 
-    output_file, skipped = process_files(files, output_file)
-
+    process_files(files, output_file)
     improve_excel(output_file)
 
 if __name__ == "__main__":

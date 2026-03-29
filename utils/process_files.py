@@ -30,4 +30,4 @@ def process_files(files, output_file):
     # Export to Excel
     merged.to_excel(output_file, index=False)
 
-    return output_file, skipped_files
+    #return output_file, skipped_files
