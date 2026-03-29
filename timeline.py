@@ -10,7 +10,7 @@ from utils.improve_excel import improve_excel
 from logger.logger_config import logger_config
 
 '''
-TODO: Add logger, log file should be located in output folder with the resulting timeline.xlxs
+TODO: Logger has been added, now add actual logging
 TODO: add readme
 '''
 
