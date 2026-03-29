@@ -37,7 +37,7 @@ timeline.exe --input F:\MYUSB\parsed_kape_data --output F:\MYUSB\folder_i_want_t
 ```
 
 ## Rebuilding / Development
-### Activate virtual environment
+### 1. Activate virtual environment
 **Windows**
 ```
 venv\Scripts\activate
@@ -48,12 +48,12 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### Install dependencies
+### 2. Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-### Build standalone executable
+### 3. Build standalone executable (after making desired changes)
 ```
 pyinstaller --onefile timeline.py
 ```
